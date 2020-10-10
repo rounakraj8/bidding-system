@@ -45,7 +45,6 @@ public class AuctionController {
   public void placeBid(@PathVariable Long itemCode, @RequestBody double bidAmount) {
     log.info("Request received for placing bid for item code {}, bid amount is {}", itemCode,
         bidAmount);
-
+    auctionService.placeBid(itemCode, bidAmount);
   }
-
 }
