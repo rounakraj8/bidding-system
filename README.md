@@ -58,6 +58,6 @@ Your system should have following installed to run this application:
      `curl --location --request POST 'localhost:8080/auction/ITEM0123/bid' \
       --header 'Content-Type: application/json' \
       --data-raw '1500
-      '`
+      '`   
       Sample Response:   
       `201 Created` / `406 Not Acceptable` / `401 Unauthorized`
