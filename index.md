@@ -53,9 +53,10 @@ Your system should have following installed to run this application:
 1. Clone the repository
 `git clone https://github.com/rounakraj8/bidding-system.git`
 2. cd into bidding-system `cd ~/bidding-system`
-3. Run the application `./mvnw spring-boot:run`
-4. Application will start running at `http://localhost:8080`
-5. Run the unit test cases and build the artifact(JAR) file `./mvnw clean install`
+3. Run the unit test cases and build the artifact(JAR) file `./mvnw clean install`
+4. Run the application `./mvnw spring-boot:run`
+5. Application will start running at `http://localhost:8080` 
+6. You can also run script to start the application `./start.sh`
 
 ### APIs
 
