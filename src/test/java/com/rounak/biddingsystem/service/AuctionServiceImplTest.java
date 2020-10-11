@@ -8,7 +8,9 @@ import com.rounak.biddingsystem.dao.AuctionDao;
 import com.rounak.biddingsystem.dao.BidDao;
 import com.rounak.biddingsystem.dto.AuctionDto;
 import com.rounak.biddingsystem.entity.Auction;
+import com.rounak.biddingsystem.entity.User;
 import com.rounak.biddingsystem.enums.AuctionStatus;
+import com.rounak.biddingsystem.enums.UserStatus;
 import com.rounak.biddingsystem.exception.AuctionNotFoundException;
 import com.rounak.biddingsystem.exception.BidUnacceptableException;
 import java.util.ArrayList;
@@ -29,6 +31,8 @@ class AuctionServiceImplTest {
   private AuctionDao auctionDao;
   @MockBean
   private BidDao bidDao;
+  @MockBean
+  private UserService userService;
 
   @Test
   void getAuctionByStatus_noRunningAuction() {
@@ -49,10 +53,10 @@ class AuctionServiceImplTest {
   void placeBid_noActiveAuction() {
     when(auctionDao.findByItemCodeAndStatus("ITEM-001", AuctionStatus.RUNNING))
         .thenReturn(Optional.empty());
-
-    assertThrows(AuctionNotFoundException.class, () -> {
-      auctionService.placeBid("ITEM-001", 1200.00, 1L);
-    });
+    when(userService.checkIfUserIsLoggedIn(1L))
+        .thenReturn(new User(1L, "User1", UserStatus.LOGGED_IN.name()));
+    assertThrows(AuctionNotFoundException.class,
+        () -> auctionService.placeBid("ITEM-001", 1200.00, 1L));
   }
 
   @Test
@@ -60,11 +64,11 @@ class AuctionServiceImplTest {
     when(auctionDao.findByItemCodeAndStatus("ITEM001", AuctionStatus.RUNNING))
         .thenReturn(
             Optional.of(new Auction(2L, "ITEM001", AuctionStatus.RUNNING.name(), 1500.00, 50.00,
-                new ArrayList<>())));
-
-    assertThrows(BidUnacceptableException.class, () -> {
-      auctionService.placeBid("ITEM001", 1200.00, 1L);
-    });
+                1600.00)));
+    when(userService.checkIfUserIsLoggedIn(1L))
+        .thenReturn(new User(1L, "User1", UserStatus.LOGGED_IN.name()));
+    assertThrows(BidUnacceptableException.class,
+        () -> auctionService.placeBid("ITEM001", 1200.00, 1L));
   }
 
   @Test
@@ -72,31 +76,30 @@ class AuctionServiceImplTest {
     when(auctionDao.findByItemCodeAndStatus("ITEM001", AuctionStatus.RUNNING))
         .thenReturn(
             Optional.of(new Auction(2L, "ITEM001", AuctionStatus.RUNNING.name(), 1500.00, 50.00,
-                new ArrayList<>())));
+                1500.00)));
+    when(userService.checkIfUserIsLoggedIn(1L))
+        .thenReturn(new User(1L, "User1", UserStatus.LOGGED_IN.name()));
     auctionService.placeBid("ITEM001", 1700.00, 1L);
   }
 
-  @Test
-  void findAndSaveBid() {
-  }
 
   private List<Auction> getRunningAuction() {
     Auction auction1 = new Auction(1L, "ITEM001", AuctionStatus.RUNNING.name(), 500.00, 50.00,
-        new ArrayList<>());
+        500.00);
     Auction auction2 = new Auction(2L, "ITEM002", AuctionStatus.RUNNING.name(), 1500.00, 50.00,
-        new ArrayList<>());
+        1500.00);
     Auction auction3 = new Auction(3L, "ITEM003", AuctionStatus.RUNNING.name(), 2500.00, 50.00,
-        new ArrayList<>());
+        2500.00);
     Auction auction4 = new Auction(4L, "ITEM004", AuctionStatus.RUNNING.name(), 3500.00, 50.00,
-        new ArrayList<>());
+        3500.00);
     Auction auction5 = new Auction(5L, "ITEM005", AuctionStatus.RUNNING.name(), 4500.00, 50.00,
-        new ArrayList<>());
+        4500.00);
     Auction auction6 = new Auction(6L, "ITEM006", AuctionStatus.RUNNING.name(), 5500.00, 50.00,
-        new ArrayList<>());
+        5500.00);
     Auction auction7 = new Auction(7L, "ITEM007", AuctionStatus.RUNNING.name(), 6500.00, 50.00,
-        new ArrayList<>());
+        6500.00);
     Auction auction8 = new Auction(8L, "ITEM008", AuctionStatus.RUNNING.name(), 7500.00, 50.00,
-        new ArrayList<>());
+        7500.00);
 
     return Arrays
         .asList(auction1, auction2, auction3, auction4, auction5, auction6, auction7, auction8);
