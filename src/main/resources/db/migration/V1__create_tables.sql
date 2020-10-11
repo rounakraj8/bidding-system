@@ -14,7 +14,7 @@ CREATE TABLE `user`
 (
     `id`     BIGINT NOT NULL PRIMARY KEY,
     `name`   varchar2,
-    `status` ENUM ('LOGGED_IN','LOGGED_OUT','INACTIVE')
+    `status` ENUM ('LOGGED_IN','LOGGED_OUT')
 );
 
 CREATE TABLE `bid`
