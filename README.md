@@ -36,7 +36,7 @@ Your system should have following installed to run this application:
 ### APIs
 
 1. FETCH RUNNING AUCTIONS  
-    GET /auction?status=RUNNING  
+    Method - `GET`,  URL `/auction?status=RUNNING`  
     This API returns all running auction.  
     CURL Request:  
     `curl --location --request GET 'localhost:8080/auction?status=RUNNING'`
@@ -56,7 +56,7 @@ Your system should have following installed to run this application:
      ]`
      
 2. PLACE BID    
-    POST /auction/{itemCode}/bid    
+    Method - `POST`,  URL `/auction/{itemCode}/bid`   
     CURL Request:  
      `curl --location --request POST 'localhost:8080/auction/ITEM0123/bid' \
       --header 'Content-Type: application/json' \
