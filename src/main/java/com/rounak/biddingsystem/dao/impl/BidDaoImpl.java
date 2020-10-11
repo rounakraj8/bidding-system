@@ -1,5 +1,6 @@
-package com.rounak.biddingsystem.dao;
+package com.rounak.biddingsystem.dao.impl;
 
+import com.rounak.biddingsystem.dao.BidDao;
 import com.rounak.biddingsystem.entity.Bid;
 import com.rounak.biddingsystem.repository.BidRepository;
 import lombok.AllArgsConstructor;
