@@ -1,0 +1,8 @@
+package com.rounak.biddingsystem.repository;
+
+import com.rounak.biddingsystem.entity.User;
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository<User, Long> {
+
+}
