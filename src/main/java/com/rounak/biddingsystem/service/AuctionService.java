@@ -7,6 +7,6 @@ public interface AuctionService {
 
   List<AuctionDto> getAuctionByStatus(String auctionStatus);
 
-  void placeBid(String itemCode, Double bidAmount);
+  void placeBid(String itemCode, Double bidAmount, Long userId);
 
 }
