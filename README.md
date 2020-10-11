@@ -92,8 +92,9 @@ Your system should have following installed to run this application:
       
     CURL Request:  
      `curl --location --request POST 'localhost:8080/auction/ITEM0123/bid' \
+      --header 'userId: 1' \
       --header 'Content-Type: application/json' \
-      --data-raw '1500
+      --data-raw '1700
       '`   
       
     Sample Response:   
