@@ -15,8 +15,7 @@ class AuctionUtilTest {
   @Test
   void getBidAmount() {
     Auction entity = getAuctionEntity(1L, "ITEM001", 1100.00, AuctionStatus.RUNNING);
-    entity.setBidSet(getBids());
-    assertEquals(1300.00, AuctionUtil.getBidAmount(entity));
+    assertEquals(1300.00, entity.getMaxBidAmount());
 
   }
 
