@@ -3,28 +3,28 @@
 #### This bidding system enables the users to place the bid for running auctions.
 
 ### Tech Stack:
-*Programming Language* - **Java (11)**
+1. *Programming Language* - **Java (11)**
 
-Java is good choice for developing scalable REST APIs.
+    Java is good choice for developing scalable REST APIs.
 
-*Framework* - **Spring Boot (2.3.2)**
+2. *Framework* - **Spring Boot (2.3.2)**
 
-Spring Boot makes very easy to develop Spring Based applications with Java. 
-It reduces lots of development time and increases productivity. 
-It avoids writing lots of boilerplate Code, Annotations and XML Configuration. 
-It is very easy to integrate Spring Boot Application with its Spring Ecosystem like Spring JDBC, 
-Spring ORM, Spring Data, Spring Security etc. It provides lots of plugins to work with embedded and in-memory Databases very easily.
+    Spring Boot makes very easy to develop Spring Based applications with Java. 
+    It reduces lots of development time and increases productivity. 
+    It avoids writing lots of boilerplate Code, Annotations and XML Configuration. 
+    It is very easy to integrate Spring Boot Application with its Spring Ecosystem like Spring JDBC, 
+    Spring ORM, Spring Data, Spring Security etc. It provides lots of plugins to work with embedded and in-memory Databases very easily.
 
-*Database* - **Embedded(In-memory) H2**  
+3. *Database* - **Embedded(In-memory) H2**  
 
-Since this is a demo application, its good to use in-memory database, 
-so that we have some seed data when we start the application.
+    Since this is a demo application, its good to use in-memory database, 
+    so that we have some seed data when we start the application.
 
 ### System Requirements:
 Your system should have following installed to run this application:
 
-**JRE 11**  
-**Maven 3.6.3+**
+   1. **JRE 11**  
+   2. **Maven 3.6.3+**
 
 ### Running this application locally on your development machine:
 1. Clone the repository
@@ -60,7 +60,7 @@ Your system should have following installed to run this application:
      
 2. PLACE BID    
 
-    Method - `POST`,  URL `/auction/{itemCode}/bid` 
+    Method - `POST`,  URL - `/auction/{itemCode}/bid` 
       
     CURL Request:  
      `curl --location --request POST 'localhost:8080/auction/ITEM0123/bid' \
