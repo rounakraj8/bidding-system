@@ -1,5 +1,6 @@
-package com.rounak.biddingsystem.dao;
+package com.rounak.biddingsystem.dao.impl;
 
+import com.rounak.biddingsystem.dao.AuctionDao;
 import com.rounak.biddingsystem.entity.Auction;
 import com.rounak.biddingsystem.enums.AuctionStatus;
 import com.rounak.biddingsystem.repository.AuctionRepository;
