@@ -2,7 +2,7 @@
 
 #### This bidding system enables the users to place the bid for running auctions.
 
-##### An Auction have following attributes:
+#### An Auction have following attributes:
 1. Item Code - for which auction is running
 2. Minimum Base Price - This is starting bidding amount, no user can place the bid
 lesser than this defined price
@@ -97,3 +97,7 @@ Your system should have following installed to run this application:
       
     Sample Response:   
       `201 Created` / `406 Not Acceptable` / `401 Unauthorized`
+
+### Postman Collection Link
+
+ ![Postman Collection] (BiddingSystem.postman_collection.json)
