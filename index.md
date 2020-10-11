@@ -98,6 +98,5 @@ Your system should have following installed to run this application:
     Sample Response:   
       `201 Created` / `406 Not Acceptable` / `401 Unauthorized`
 
-### Postman Collection Link
 
- <a href="https://github.com/rounakraj8/bidding-system/blob/main/BiddingSystem.postman_collection.json" target="_blank">Postman Collection Link</a>
+ #### <a href="https://github.com/rounakraj8/bidding-system/blob/main/BiddingSystem.postman_collection.json" target="_blank">Postman Collection Link</a>
