@@ -2,7 +2,6 @@ package com.rounak.biddingsystem.mapper;
 
 import com.rounak.biddingsystem.dto.AuctionDto;
 import com.rounak.biddingsystem.entity.Auction;
-import com.rounak.biddingsystem.util.AuctionUtil;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
@@ -14,9 +13,7 @@ public class AuctionMapper {
     return entityList.stream()
         .map(entity -> new AuctionDto(entity.getItemCode(),
             entity.getStepPrice(),
-            AuctionUtil.getBidAmount(entity)))
+            entity.getMaxBidAmount()))
         .collect(Collectors.toList());
   }
-
-
 }
