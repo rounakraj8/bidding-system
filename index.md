@@ -100,4 +100,4 @@ Your system should have following installed to run this application:
 
 ### Postman Collection Link
 
- <a href="https://https://github.com/rounakraj8/bidding-system/blob/main/BiddingSystem.postman_collection.json" target="_blank">Postman Collection Link</a>
+ <a href="https://github.com/rounakraj8/bidding-system/blob/main/BiddingSystem.postman_collection.json" target="_blank">Postman Collection Link</a>
