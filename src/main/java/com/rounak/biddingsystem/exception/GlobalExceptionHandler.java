@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-  @ExceptionHandler(InvalidAuctionStatusException.class)
+  @ExceptionHandler(AuctionStatusException.class)
   public ResponseEntity<Object> handle(
-      InvalidAuctionStatusException invalidAuctionStatusException) {
+      AuctionStatusException invalidAuctionStatusException) {
     return new ResponseEntity<>(invalidAuctionStatusException.getMessage(),
         HttpStatus.BAD_REQUEST);
   }
@@ -29,5 +29,17 @@ public class GlobalExceptionHandler {
         HttpStatus.NOT_ACCEPTABLE);
   }
 
+  @ExceptionHandler(UserNotFoundException.class)
+  public ResponseEntity<Object> handle(
+      UserNotFoundException userNotFoundException) {
+    return new ResponseEntity<>(userNotFoundException.getMessage(),
+        HttpStatus.UNAUTHORIZED);
+  }
 
+  @ExceptionHandler(UserNotLoggedInException.class)
+  public ResponseEntity<Object> handle(
+      UserNotLoggedInException userNotLoggedInException) {
+    return new ResponseEntity<>(userNotLoggedInException.getMessage(),
+        HttpStatus.NOT_ACCEPTABLE);
+  }
 }
