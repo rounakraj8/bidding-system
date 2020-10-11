@@ -55,6 +55,7 @@ Your system should have following installed to run this application:
 2. cd into bidding-system `cd ~/bidding-system`
 3. Run the application `./mvnw spring-boot:run`
 4. Application will start running at `http://localhost:8080`
+5. Run the unit test cases and build the artifact(JAR) file `./mvnw clean install`
 
 ### APIs
 
