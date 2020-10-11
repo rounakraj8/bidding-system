@@ -1,4 +1,4 @@
-package com.rounak.biddingsystem.service;
+package com.rounak.biddingsystem.service.impl;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -13,6 +13,8 @@ import com.rounak.biddingsystem.enums.AuctionStatus;
 import com.rounak.biddingsystem.enums.UserStatus;
 import com.rounak.biddingsystem.exception.AuctionNotFoundException;
 import com.rounak.biddingsystem.exception.BidUnacceptableException;
+import com.rounak.biddingsystem.service.AuctionService;
+import com.rounak.biddingsystem.service.UserService;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
