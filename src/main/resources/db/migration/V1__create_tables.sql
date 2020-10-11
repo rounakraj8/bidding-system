@@ -4,7 +4,8 @@ CREATE TABLE `auction`
     `item_code`      VARCHAR2,
     `status`         ENUM ('RUNNING', 'OVER'),
     `min_base_price` DOUBLE,
-    `step_price`     DOUBLE
+    `step_price`     DOUBLE,
+    `max_bid_amount` DOUBLE
 );
 
 CREATE INDEX item_code ON `auction` (`item_code`);
