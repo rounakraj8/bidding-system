@@ -26,4 +26,9 @@ public class AuctionDaoImpl implements AuctionDao {
   public Optional<Auction> findByItemCodeAndStatus(String itemCode, AuctionStatus auctionStatus) {
     return auctionRepository.findByItemCodeAndStatus(itemCode, auctionStatus.name());
   }
+
+  @Override
+  public Auction save(Auction auction) {
+    return auctionRepository.save(auction);
+  }
 }

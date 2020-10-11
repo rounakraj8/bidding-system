@@ -11,4 +11,5 @@ public interface AuctionDao {
 
   Optional<Auction> findByItemCodeAndStatus(String itemCode, AuctionStatus auctionStatus);
 
+  Auction save(Auction auction);
 }
