@@ -12,8 +12,9 @@ CREATE INDEX item_code ON `auction` (`item_code`);
 
 CREATE TABLE `user`
 (
-    `id`   BIGINT NOT NULL PRIMARY KEY,
-    `name` varchar2
+    `id`     BIGINT NOT NULL PRIMARY KEY,
+    `name`   varchar2,
+    `status` ENUM ('LOGGED_IN','LOGGED_OUT','INACTIVE')
 );
 
 CREATE TABLE `bid`
