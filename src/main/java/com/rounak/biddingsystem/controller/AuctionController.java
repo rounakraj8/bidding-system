@@ -1,10 +1,10 @@
 package com.rounak.biddingsystem.controller;
 
-import static com.rounak.biddingsystem.Constants.AUCTION_BASE_URI;
-import static com.rounak.biddingsystem.Constants.PLACE_BID_URI;
+import static com.rounak.biddingsystem.constants.BiddingSystemConstants.AUCTION_BASE_URI;
+import static com.rounak.biddingsystem.constants.BiddingSystemConstants.AUCTION_PLACE_BID_URI;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-import com.rounak.biddingsystem.dto.Auction;
+import com.rounak.biddingsystem.dto.AuctionDto;
 import com.rounak.biddingsystem.service.AuctionService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -35,14 +35,14 @@ public class AuctionController {
 
   @GetMapping
   @ResponseStatus(HttpStatus.OK)
-  public List<Auction> getAuctionByStatus(@RequestParam String status) {
-    log.info("Request received for getting all auction with status: {}", status);
-    return auctionService.getAuctionByStatus(status);
+  public List<AuctionDto> getAuctionByStatus(@RequestParam("status") String auctionStatus) {
+    log.info("Request received for getting all auction with status: {}", auctionStatus);
+    return auctionService.getAuctionByStatus(auctionStatus);
   }
 
-  @PostMapping(value = PLACE_BID_URI)
+  @PostMapping(value = AUCTION_PLACE_BID_URI)
   @ResponseStatus(HttpStatus.CREATED)
-  public void placeBid(@PathVariable Long itemCode, @RequestBody double bidAmount) {
+  public void placeBid(@PathVariable String itemCode, @RequestBody Double bidAmount) {
     log.info("Request received for placing bid for item code {}, bid amount is {}", itemCode,
         bidAmount);
     auctionService.placeBid(itemCode, bidAmount);
