@@ -24,7 +24,7 @@ corresponding item
 ### Tech Stack:
 1. *Programming Language* - **Java (11)**
 
-    Java is good choice for developing scalable REST APIs.
+    Java is good choice for developing scalable REST APIs. Java scales well as it is multi-threaded.
 
 2. *Framework* - **Spring Boot (2.3.2)**
 
@@ -39,7 +39,7 @@ corresponding item
     Since this is a demo application, its good to use in-memory database, 
     so that we have some seed data when we start the application.
     Also, we need to use any RDBMS so that we have ACID compliance out of the box.
-    NoSQL will suffer from eventual consistency and this cannot suffice the requirement of a bidding system.
+    NoSQL will suffer from eventual consistency and this cannot suffice the requirement of a bidding system.    
     
 4. *Build Tool* - **Maven**    
 
@@ -98,6 +98,31 @@ Your system should have following installed to run this application:
       
     Sample Response:   
       `201 Created` / `406 Not Acceptable` / `401 Unauthorized`
+      
+#### Users
+
+<table>
+   <tr>
+      <th>User ID</th>
+      <th>User Name</th>
+      <th>Status</th>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td>USER_1</td>
+      <td>LOGGED_IN</td>
+   </tr>
+   <tr>
+      <td>2</td>
+      <td>USER_2</td>
+      <td>LOGGED_OUT</td>
+   </tr>
+   <tr>
+      <td>3</td>
+      <td>USER_3</td>
+      <td>LOGGED_IN</td>
+   </tr>
+</table>     
 
 #### Postman Collection
  <a href="https://github.com/rounakraj8/bidding-system/blob/main/BiddingSystem.postman_collection.json" target="_blank">Link</a>
