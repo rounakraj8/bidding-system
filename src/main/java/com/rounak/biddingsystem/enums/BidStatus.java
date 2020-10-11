@@ -1,6 +1,6 @@
 package com.rounak.biddingsystem.enums;
 
-import com.rounak.biddingsystem.exception.InvalidBidStatusException;
+import com.rounak.biddingsystem.exception.BidStatusException;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,6 +22,6 @@ public enum BidStatus {
       }
     }
     log.error("Invalid Bid Status: '{}'", status);
-    throw new InvalidBidStatusException();
+    throw new BidStatusException();
   }
 }

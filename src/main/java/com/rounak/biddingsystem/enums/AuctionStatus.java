@@ -1,6 +1,6 @@
 package com.rounak.biddingsystem.enums;
 
-import com.rounak.biddingsystem.exception.InvalidAuctionStatusException;
+import com.rounak.biddingsystem.exception.AuctionStatusException;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,6 +22,6 @@ public enum AuctionStatus {
       }
     }
     log.error("Invalid Auction Status: '{}'", status);
-    throw new InvalidAuctionStatusException(status);
+    throw new AuctionStatusException(status);
   }
 }
