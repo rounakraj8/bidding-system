@@ -102,7 +102,8 @@ Your system should have following installed to run this application:
 #### Postman Collection
  <a href="https://github.com/rounakraj8/bidding-system/blob/main/BiddingSystem.postman_collection.json" target="_blank">Link</a>
  
- #### Dockerize & Deploy the app in Kubernetes
+
+#### Dockerize & Deploy the app in Kubernetes
  
  <a href="https://rounakraj8.github.io/kubernetes-101/">Link</a>
  
