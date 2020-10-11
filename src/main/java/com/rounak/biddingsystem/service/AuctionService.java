@@ -1,12 +1,12 @@
 package com.rounak.biddingsystem.service;
 
-import com.rounak.biddingsystem.dto.Auction;
+import com.rounak.biddingsystem.dto.AuctionDto;
 import java.util.List;
 
 public interface AuctionService {
 
-  List<Auction> getAuctionByStatus(String status);
+  List<AuctionDto> getAuctionByStatus(String auctionStatus);
 
-  void placeBid(Long itemCode, double bidAmount);
+  void placeBid(String itemCode, Double bidAmount);
 
 }
