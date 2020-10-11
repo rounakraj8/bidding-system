@@ -1,10 +1,7 @@
 package com.rounak.biddingsystem.entity;
 
-import java.util.Collection;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +20,6 @@ public class Auction {
   private String status;
   private Double minBasePrice;
   private Double stepPrice;
+  private Double maxBidAmount;
 
-  @OneToMany(mappedBy = "auctionId", fetch = FetchType.EAGER)
-  private Collection<Bid> bidSet;
 }
