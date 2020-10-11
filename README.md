@@ -19,6 +19,10 @@
 
     Since this is a demo application, its good to use in-memory database, 
     so that we have some seed data when we start the application.
+    Also, we need to use any RDBMS so that we have ACID compliance out of the box.
+    NoSQL will suffer from eventual consistency and this cannot suffice the requirement of a bidding system.
+    
+4. *Build Tool* - **Maven**    
 
 ### System Requirements:
 Your system should have following installed to run this application:
@@ -50,7 +54,7 @@ Your system should have following installed to run this application:
              "itemCode": "ITEM0123",
              "stepPrice": 100.0,
              "highestBidAmount": 1100.0
-         },   
+         },                                 
          {
              "itemCode": "ITEM0125",
              "stepPrice": 50.0,
