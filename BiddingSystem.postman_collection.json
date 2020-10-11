@@ -1,0 +1,69 @@
+{
+  "info": {
+    "_postman_id": "072ac1ff-0994-4297-aa2d-f0e6a593de86",
+    "name": "BiddingSystem",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Fetch Running Auction",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/auction?status=RUNNING",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "auction"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "RUNNING"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Place Bid",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "userId",
+            "value": "23",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "1500\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/auction/ITEM0123/bid",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "auction",
+            "ITEM0123",
+            "bid"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
